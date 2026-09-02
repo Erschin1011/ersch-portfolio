@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base; @tailwind components; @tailwind utilities;
+:root { font-family: Inter, sans-serif; color: #e8eff0; background: #090b0d; scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(circle at 80% 0%, rgba(31, 70, 75, .22), transparent 30rem), #090b0d; }
+* { box-sizing: border-box; } ::selection { background: #28d7e8; color: #090b0d; }
+.grid-bg { background-image: linear-gradient(rgba(72, 101, 105, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(72, 101, 105, .08) 1px, transparent 1px); background-size: 52px 52px; }

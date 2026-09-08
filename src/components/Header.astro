@@ -1,4 +1,4 @@
 ---
-const links = ['Profile', 'About', 'Experience', 'Education', 'Projects', 'Contact'];
+const links = ['Profile', 'About', 'Stack', 'Experience', 'Education', 'Projects', 'Contact'];
 ---
 <header class="sticky top-0 z-50 border-b border-line/70 bg-ink/95 backdrop-blur-md"><div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8"><a href="#profile" aria-label="Ir al inicio del portfolio" class="font-mono text-[11px] font-bold tracking-[.18em] text-lime">ErsCh.dev</a><nav class="hidden gap-6 text-[11px] font-mono text-slate-400 lg:flex">{links.map((link) => <a class="transition hover:text-cyan" href={`#${link.toLowerCase()}`}>{link}</a>)}</nav><a href="#contact" class="group flex items-center gap-3 rounded-sm bg-[#b8c0ff] px-4 py-2 text-[10px] font-medium text-[#151622] transition hover:bg-white">Connect <span class="transition group-hover:translate-x-1">↗</span></a></div></header>

@@ -1,4 +1,6 @@
 ---
 const { eyebrow, title, copy } = Astro.props;
+const englishTitles = { 'Perfil del sistema': 'System Profile', 'Matriz de arquitecturas': 'Architecture Matrix', 'Ruta profesional': 'Professional Roadmap', 'Directivas académicas': 'Academic Directives', 'Operaciones activas': 'Active Operations' };
+const englishEyebrows = { 'Perfil del sistema': 'System profile', 'Matriz de arquitecturas': 'Architecture matrix', 'Ruta profesional': 'Professional roadmap', 'Directivas académicas': 'Academic directives', 'Operaciones activas': 'Active operations' };
 ---
-<div class="max-w-2xl"><div class="mb-4 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.18em] text-cyan"><span class="text-lime">{Astro.props.icon || '▣'}</span>{eyebrow}</div><h2 class="font-mono text-xl font-medium tracking-[-.02em] text-white sm:text-2xl">{title}</h2>{copy && <p class="mt-7 text-xs leading-6 text-slate-400">{copy}</p>}</div>
+<div class="max-w-2xl"><div class="mb-4 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.18em] text-cyan"><span class="text-lime">{Astro.props.icon || '▣'}</span><span data-es={eyebrow} data-en={englishEyebrows[title] || eyebrow}>{eyebrow}</span></div><h2 data-es={title} data-en={englishTitles[title] || title} class="font-mono text-xl font-medium tracking-[-.02em] text-white sm:text-2xl">{title}</h2>{copy && <p data-es={copy} data-en={copy} class="mt-7 text-xs leading-6 text-slate-400">{copy}</p>}</div>

@@ -9,6 +9,8 @@ dist/
 .env
 .env.*
 !.env.example
+__pycache__/
+*.py[cod]
 
 # Editor and OS files
 .vscode/

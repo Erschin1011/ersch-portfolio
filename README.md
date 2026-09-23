@@ -62,13 +62,13 @@ La página principal se compone en `src/pages/index.astro` usando `BaseLayout`, 
 
 ## Endpoint de contacto
 
-`POST /api/contact` acepta `name`, `email` y `message` como formulario `multipart/form-data` o `application/x-www-form-urlencoded`. Valida los campos, aplica límites de longitud y registra el mensaje en el servidor. La respuesta exitosa es:
+`POST /api/contact` acepta `name`, `email`, `message` y el campo anti-bot `website` como formulario `multipart/form-data` o `application/x-www-form-urlencoded`. Valida formato, caracteres, límites de longitud, contenido sospechoso y aplica un límite de 5 intentos por IP cada 15 minutos. El campo `website` debe permanecer vacío. La respuesta exitosa es:
 
 ```json
 {"ok": true, "message": "Mensaje recibido correctamente"}
 ```
 
-La API incluye CORS configurable, pero todavía no envía correos ni guarda en una base de datos. Para producción se debe conectar un proveedor de correo o persistencia y definir `ALLOWED_ORIGINS` con el dominio real del frontend.
+La API incluye CORS configurable, pero todavía no envía correos ni guarda en una base de datos. La validación reduce spam y entradas maliciosas, pero no puede comprobar por sí sola que una persona sea real. Para producción se recomienda añadir CAPTCHA/Turnstile, HTTPS, un rate limiter distribuido y conectar un proveedor de correo o persistencia. Define `ALLOWED_ORIGINS` con el dominio real del frontend.
 
 ## Publicación
 
